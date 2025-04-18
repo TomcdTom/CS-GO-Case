@@ -7,35 +7,35 @@ const prizename = document.querySelector('#prize-name');
 let arr = [
     {
         name:'knife',
-        src:'/assets/item-1.png',
+        src:'../assets/item-1.png',
     },
     {
         name:'gold-knife',
-        src:'/assets/item-2.png',
+        src:'../assets/item-2.png',
     },
     {
         name:'Secret-knife',
-        src:'/assets/item-3.png',
+        src:'../assets/item-3.png',
     },
     {
         name:'AUG',
-        src:'/assets/item-4.png',
+        src:'../assets/item-4.png',
     },
     {
         name:'awp-classic',
-        src:'/assets/item-5.png',
+        src:'../assets/item-5.png',
     },
     {
         name:'kerambit',
-        src:'/assets/item-6.png',
+        src:'../assets/item-6.png',
     },
     {
         name:'AWP-BOLT',
-        src:'/assets/item-7.png',
+        src:'../assets/item-7.png',
     },
     {
         name:'P90',
-        src:'/assets/item-8.png',
+        src:'../assets/item-8.png',
     }
 
 ]
