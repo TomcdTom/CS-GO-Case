@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: radial-gradient(circle 200px at 50% 50% ,rgb(0, 0, 65),black,transparent),
+                radial-gradient(circle 300px at 50% 0% ,rgb(63, 63, 63),black);
+    color: white;
+}
+
+
+@font-face {
+    font-family: 'Fear';
+    src: url(../font/FEARDynamic-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'faqro';
+    src: url(../font/FaqroExtendedExpandTrial-Regular.ttf);
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.wheel-container{
+    display: flex;
+    min-height: inherit;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column ;
+    position: relative;
+    width: inherit;
+}
+
+
+.marker{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(199,1,93);
+    top: calc(50% - 200px);
+    clip-path: polygon(0 0,100% 0, 50% 100%);
+    z-index: 10;
+}
+
+#spin-btn{
+    position: absolute;
+    bottom: 10%;
+    width: 150px;
+    height: 50px;
+    background:linear-gradient(120deg, white 0,1% , blue);
+    border-radius: 15px;
+    color: white;
+    outline: none;
+    overflow: hidden;
+    transition: all .2s ease;
+    &:hover{
+        transform: scale(1.05);
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        filter: blur(8px);
+        height: 50px;
+        width: 10px;
+        background: white;
+        animation: flash 3s infinite;
+    }
+}
+
+
+.prize-result{
+    position: fixed;
+
+
+}
+
+
+h1{
+    font-family: 'faqro';
+    letter-spacing: 10px;
+}
+
+
+.wheel{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.card{
+display: flex;
+font-family: 'Fear';
+flex-direction: column;
+align-items: center;
+position: absolute;
+justify-content: space-around;
+width: 100%;
+height: 100%;
+border-radius: 15px;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+box-shadow: 0px 0px 30px rgb(0, 65, 65);
+    & img{
+        width: 150px;
+    }
+}
+
+.card-color{
+    height: 10px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+
+#prize-result{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(25px);
+}
+
+
+#prize-item{
+    width: 400px;
+    animation : scale 1.5s 1;
+}
+
+
+#prize-name{
+    font-size: 3rem;
+    color: white;
+    font-family: 'fear';
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(10);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes flash{
+    0%{
+        transform: translateX(-10px);
+    }
+    100%{
+        transform: translateX(160px);
+    }
+    
+}
